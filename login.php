@@ -5,7 +5,6 @@
         $chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHI JKLMNOPRQSTUVWXYZ0123456789";
         return password_hash(substr(str_shuffle($chars), 0, $length),PASSWORD_BCRYPT);
     }
-# Соединямся с БД
     $mybd = new mysqli("127.0.0.1", "root", "root", "php_lab4",3306);
     if(!$mybd)
         die(json_encode(["ERROR"=>"BAD_SQL_CONN"]));
